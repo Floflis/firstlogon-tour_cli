@@ -1,0 +1,17 @@
+GUI counterpart: /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour
+
+- add first login questions: centered Explorer+window btns (Cinnamon-only), Weather button label (Cinnamon-only), Battery btn label (Cinnamon-only)
+
+-[DUPLICED?] firstlogon wizard: ask if user want Explore menu label. and seconds in calendar applet; also if user want the "/" format. ask if user want the water applet to display in C or F and if want to display details such as "Clouds"
+firstlogon questions:
+ask to have label in Explore button or not (default is yes)
+exactly Floflis like: " %H:%M:%S%n%e-%b-%y" ---- exactly WindOS like: "%H:%M%n%d/%m/%Y"
+
+- firstlogon first ask if Internet is connected before proceeding to internet.dart.
+- via Internet at firstlogon option: sudo dpkg -i include/deb packages/pending/maybe/onlyoffice-desktopeditors_amd64.deb && sudo apt install --fix-broken
+-
+if user choose to install MS Edge, add its shortcut both on cinnamon-window-list and cobi-window-list, before Firedoge's shortcut. also add its shortcut to the Desktop
+
+firstlogon open wizard, then ask user to add the ethgas applet/desklet (etherean-personality-pack then assigned)
+
+after ask to install winapps at firstlogon, and it will require Internet (be it target user or it technicial for customer)

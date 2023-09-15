@@ -1,0 +1,42 @@
+This folder: /media/daniella/B/git/Floflis/Floflis/Floflis-DNA/layers/soil/to-merge/include-firstlogon/System
+
+  File: ./firedoge
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 8,20	Inode: 4086112     Links: 1
+Access: (0777/drwxrwxrwx)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-02-07 21:15:08.505285900 -0300
+Modify: 2023-02-07 21:13:41.755329800 -0300
+Change: 2023-02-07 21:15:08.457299900 -0300
+ Birth: -
+IPFS hash: 
+------------------------------
+  File: ./firstlogon-tour_cli
+  Size: 0         	Blocks: 0          IO Block: 4096   directory
+Device: 8,20	Inode: 4254510     Links: 1
+Access: (0777/drwxrwxrwx)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-09-14 23:49:05.392633900 -0300
+Modify: 2023-09-14 23:48:55.381752900 -0300
+Change: 2023-09-14 23:49:04.511258100 -0300
+ Birth: -
+IPFS hash: 
+------------------------------
+  File: ./winapps
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 8,20	Inode: 4115866     Links: 1
+Access: (0777/drwxrwxrwx)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-09-04 01:33:05.850203000 -0300
+Modify: 2023-02-12 22:22:09.756886700 -0300
+Change: 2023-09-04 01:33:05.833267400 -0300
+ Birth: -
+IPFS hash: 
+------------------------------
+  File: ./wine-desktop-common
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 8,20	Inode: 3144833     Links: 1
+Access: (0777/drwxrwxrwx)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-09-04 01:31:46.614614400 -0300
+Modify: 2023-03-06 14:16:48.600122500 -0300
+Change: 2023-09-04 01:31:46.598408100 -0300
+ Birth: -
+IPFS hash: 
+------------------------------
