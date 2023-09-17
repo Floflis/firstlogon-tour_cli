@@ -1,20 +1,3 @@
-- run gsettings cmds according to the linux distro:
-
-Ubuntu Cinnamon 22+:
-- Mouse color is kept (Yaru / DMZ-White)
-- Theme intensity: Yaru-cinnamon / Yaru-cinnamon-dark
-
-Linux Mint 21.1 Cinnamon+:
-- Mouse color: Bibata-Modern-Classic / DMZ-White
-- Theme intensity: Mint-Y-Dark-Aqua / Mint-Y-Aqua
-
-Ubuntu 23+:
-- Mouse color is kept (Yaru / DMZ-White) gsettings set  org.gnome.desktop.interface cursor-theme 'redglass' # https://askubuntu.com/a/933140
-- Theme intensity: Yaru / Yaru-dark gsettings set org.gnome.desktop.interface gtk-theme "CoolestThemeOnEarth" && gsettings set org.gnome.desktop.wm.preferences theme "CoolestThemeOnEarth" # https://askubuntu.com/a/262946
-/media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour/assets/img/screens/steps/themecolor/ubuntu
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------
 
 new first logon questions:
 - centered Explorer+window btns (Cinnamon-only)

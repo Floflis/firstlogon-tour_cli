@@ -4,10 +4,45 @@ username=$(logname)
 #export flouser #not needed yet
 
 # draft distro detection:
-if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') == "Linux Mint" ]; then echo "Linux Mint"; fi
-if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') == "Ubuntu" ]; then echo "Ubuntu"; fi
-if [ -e /usr/share/plymouth/themes/ubuntucinnamon-spinner ]; then echo "Ubuntu Cinnamon"; fi #this have to be placed exactly after Ubuntu, to patch the current value, bc UCR is also calling itself Ubuntu in /etc/os-release
-if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') == "Floflis" ]; then echo "Floflis"; fi
+if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') == "Linux Mint" ]; then distrotype="Linux Mint"; fi
+if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') == "Ubuntu" ]; then distrotype="Ubuntu"; fi
+if [ -e /usr/share/plymouth/themes/ubuntucinnamon-spinner ]; then distrotype="Ubuntu Cinnamon"; fi #this have to be placed exactly after Ubuntu, to patch the current value, bc UCR is also calling itself Ubuntu in /etc/os-release
+if [ $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') == "Floflis" ]; then distrotype="Floflis"; fi
+
+changecursor_black () {
+if [ $distrotype == "Linux Mint" ]; then gsettings set org.cinnamon.desktop.interface cursor-theme 'Bibata-Modern-Classic'; fi
+if [ $distrotype == "Ubuntu" ]; then gsettings set org.gnome.desktop.interface cursor-theme 'Yaru'; fi
+if [ $distrotype == "Ubuntu Cinnamon" ]; then gsettings set org.cinnamon.desktop.interface cursor-theme 'Yaru'; fi
+if [ $distrotype == "Floflis" ]; then gsettings set org.cinnamon.desktop.interface cursor-theme 'Floflis'; fi
+}
+
+changecursor_white () {
+if [ $distrotype == "Linux Mint" ]; then gsettings set org.cinnamon.desktop.interface cursor-theme 'DMZ-White'; fi
+if [ $distrotype == "Ubuntu" ]; then gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'; fi
+if [ $distrotype == "Ubuntu Cinnamon" ]; then gsettings set org.cinnamon.desktop.interface cursor-theme 'DMZ-White'; fi
+if [ $distrotype == "Floflis" ]; then gsettings set org.cinnamon.desktop.interface cursor-theme 'DMZ-White'; fi
+}
+
+changethemestyle_dark () {
+if [ $distrotype == "Linux Mint" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Mint-Y-Dark-Aqua' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Aqua' && gsettings set org.cinnamon.theme name 'Mint-Y-Dark-Aqua'; fi
+if [ $distrotype == "Ubuntu" ]; then gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark' && gsettings set org.gnome.desktop.wm.preferences theme 'Yaru-dark'; fi
+if [ $distrotype == "Ubuntu Cinnamon" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-cinnamon-dark' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-cinnamon-dark' && gsettings set org.cinnamon.theme name 'Yaru-cinnamon-dark'; fi
+if [ $distrotype == "Floflis" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis-dark' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis-dark' && gsettings set org.cinnamon.theme name 'Yaru-floflis-dark'; fi
+}
+
+changethemestyle_default () {
+if [ $distrotype == "Linux Mint" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Mint-Y-Aqua' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Aqua' && gsettings set org.cinnamon.theme name 'Mint-Y-Aqua'; fi
+if [ $distrotype == "Ubuntu" ]; then gsettings set org.gnome.desktop.interface gtk-theme 'Yaru' && gsettings set org.gnome.desktop.wm.preferences theme 'Yaru'; fi
+if [ $distrotype == "Ubuntu Cinnamon" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-cinnamon' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-cinnamon' && gsettings set org.cinnamon.theme name 'Yaru-cinnamon'; fi
+if [ $distrotype == "Floflis" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis' && gsettings set org.cinnamon.theme name 'Yaru-floflis'; fi
+}
+
+changethemestyle_light () {
+#if [ $distrotype == "Linux Mint" ]; then ; fi
+#if [ $distrotype == "Ubuntu" ]; then ; fi
+#if [ $distrotype == "Ubuntu Cinnamon" ]; then ; fi
+if [ $distrotype == "Floflis" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis-light' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis-light' && gsettings set org.cinnamon.theme name 'Yaru-floflis-light'; fi
+}
 
 HEIGHT=15
 WIDTH=40
@@ -30,10 +65,10 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
         1)
-            gsettings set org.cinnamon.desktop.interface cursor-theme 'Floflis' #from https://askubuntu.com/a/72093
+            changecursor_black
             ;;
         2)
-            gsettings set org.cinnamon.desktop.interface cursor-theme 'DMZ-White' #from https://askubuntu.com/a/72093
+            changecursor_white
             ;;
 esac
 #from https://askubuntu.com/a/666179
@@ -61,13 +96,13 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
         1)
-            gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis-dark' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis-dark' && gsettings set org.cinnamon.theme name 'Yaru-floflis-dark' #from https://askubuntu.com/a/72093
+            changethemestyle_dark
             ;;
         2)
-            gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis' && gsettings set org.cinnamon.theme name 'Yaru-floflis' #from https://askubuntu.com/a/72093
+            changethemestyle_default
             ;;
         3)
-            gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis-light' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis-light' && gsettings set org.cinnamon.theme name 'Yaru-floflis-light' #from https://askubuntu.com/a/72093
+            changethemestyle_light
             ;;
 esac
 #from https://askubuntu.com/a/666179
