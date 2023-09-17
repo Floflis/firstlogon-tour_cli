@@ -1,5 +1,8 @@
 GUI counterpart: /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour
 
+- detect username, which will be useful for changing Cinnamon applet settings
+- run gsettings cmds according to the linux distro /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour/Tasks/multidistroSupport
+
 - add first login questions: centered Explorer+window btns (Cinnamon-only), Weather button label (Cinnamon-only), Battery btn label (Cinnamon-only)
 
 -[DUPLICED?] firstlogon wizard: ask if user want Explore menu label. and seconds in calendar applet; also if user want the "/" format. ask if user want the water applet to display in C or F and if want to display details such as "Clouds"
