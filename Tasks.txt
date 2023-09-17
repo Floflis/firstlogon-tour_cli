@@ -1,5 +1,3 @@
-GUI counterpart: /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour
-
 - run gsettings cmds according to the linux distro:
 
 Ubuntu Cinnamon 22+:
