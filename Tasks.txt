@@ -1,11 +1,28 @@
 GUI counterpart: /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour
 
 - run gsettings cmds according to the linux distro /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour/Tasks/multidistroSupport
-awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"'
-- Floflis
-- Linux Mint
-- Ubuntu
-- (ubuntu-cinnamon appears as "Ubuntu" too, so there has to be other way)
+
+- $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') Floflis
+- $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') Linux Mint
+- $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') Ubuntu
+- if [ -e /usr/share/plymouth/themes/ubuntucinnamon-spinner ]; then echo "Ubuntu Cinnamon"; fi
+
+
+Ubuntu Cinnamon 22+:
+- Mouse color is kept (Yaru / DMZ-White)
+- Theme intensity: Yaru-cinnamon / Yaru-cinnamon-dark
+
+Linux Mint 21.1 Cinnamon+:
+- Mouse color: Bibata-Modern-Classic / DMZ-White
+- Theme intensity: Mint-Y-Dark-Aqua / Mint-Y-Aqua
+
+Ubuntu 23+:
+- Mouse color is kept (Yaru / DMZ-White) gsettings set  org.gnome.desktop.interface cursor-theme 'redglass' # https://askubuntu.com/a/933140
+- Theme intensity: Yaru / Yaru-dark gsettings set org.gnome.desktop.interface gtk-theme "CoolestThemeOnEarth" && gsettings set org.gnome.desktop.wm.preferences theme "CoolestThemeOnEarth" # https://askubuntu.com/a/262946
+/media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour/assets/img/screens/steps/themecolor/ubuntu
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 new first logon questions:
 - centered Explorer+window btns (Cinnamon-only)
@@ -14,6 +31,8 @@ new first logon questions:
 - ask to have label in Explore button or not (default is yes)
 - ask if user want seconds in calendar applet, also if user want the "/" format - exactly Floflis like: " %H:%M:%S%n%e-%b-%y" ---- exactly WindOS like: "%H:%M%n%d/%m/%Y"
 - ask if user want the weather applet to display in C or F and if want to display details such as "Clouds"
+- If Cinnamon DE is detected: choose between showing desktop on hover or not
+- If Cinnamon or GNOME DE are detected: choose between auto-hiding panel or not gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false && gsettings set org.gnome.shell.extensions.dash-to-dock autohide true # https://askubuntu.com/a/1005474
 
 - firstlogon first ask if Internet is connected before proceeding to internet.dart
 -
