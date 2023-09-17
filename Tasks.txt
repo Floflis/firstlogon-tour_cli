@@ -1,12 +1,6 @@
 GUI counterpart: /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour
 
-- run gsettings cmds according to the linux distro /media/daniella/B/git/Floflis/Floflis/ProgramsApps/firstlogon_tour/Tasks/multidistroSupport
-
-- $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') Floflis
-- $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') Linux Mint
-- $(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"') Ubuntu
-- if [ -e /usr/share/plymouth/themes/ubuntucinnamon-spinner ]; then echo "Ubuntu Cinnamon"; fi
-
+- run gsettings cmds according to the linux distro:
 
 Ubuntu Cinnamon 22+:
 - Mouse color is kept (Yaru / DMZ-White)
