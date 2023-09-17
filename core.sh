@@ -44,6 +44,16 @@ changethemestyle_light () {
 if [ $distrotype == "Floflis" ]; then gsettings set org.cinnamon.desktop.wm.preferences theme 'Yaru-floflis-light' && gsettings set org.cinnamon.desktop.interface gtk-theme 'Yaru-floflis-light' && gsettings set org.cinnamon.theme name 'Yaru-floflis-light'; fi
 }
 
+# Work as a backend for our Flutter GUI ---->
+if [ "$1" = "changecursor_black" ]; then changecursor_black; fi
+if [ "$1" = "changecursor_white" ]; then changecursor_white; fi
+if [ "$1" = "changethemestyle_dark" ]; then changethemestyle_dark; fi
+if [ "$1" = "changethemestyle_default" ]; then changethemestyle_default; fi
+if [ "$1" = "changethemestyle_light" ]; then changethemestyle_light; fi
+# <---- Work as a backend for our Flutter GUI
+
+if [ "$1" = "" ]; then #mean it is running in interactive mode, without GUI
+
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4
@@ -149,4 +159,6 @@ echo "Please note Floflis do already include a basic calculator by default."
 esac
 #if user is an IT technician installing for a customer, don't ask and install MS Edge and Calculator right away)
 #floflis fixer should support reinstalling default calculator
+fi
+
 fi
